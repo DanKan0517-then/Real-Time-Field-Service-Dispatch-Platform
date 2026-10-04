@@ -43,21 +43,8 @@ Built to handle **10,000+ technicians** and **100,000+ service requests**.
 
 ## 🏗️ Architecture
 
-```mermaid
-flowchart LR
-    TA[📱 Technician app] -- GPS via WebSocket / REST --> TR[tracking-service :8001]
-    TR -- technician.location --> K[(Kafka)]
-    CL[👤 Customer / Ops] -- REST --> DS[dispatch-service :8000]
-    DS -- job.events --> K
-    DS -- geo search --> ES[(Elasticsearch)]
-    DS -- locks · idempotency · availability --> R[(Redis)]
-    K --> IX[indexer worker]
-    IX -- update location & status --> ES
-    IX -- GEO + availability --> R
-    IX -. failed messages .-> DLQ[(*.dlq topics)]
-    K --> TR
-    TR -- live updates --> WS[🖥️ Dispatcher & customer WebSockets]
-```
+<img width="2800" height="3280" alt="image" src="https://github.com/user-attachments/assets/3ba8c27f-3607-49e3-ba92-98f9935ea382" />
+
 
 ### Services
 
