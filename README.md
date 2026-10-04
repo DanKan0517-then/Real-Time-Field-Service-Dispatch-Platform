@@ -68,6 +68,9 @@ Built to handle **10,000+ technicians** and **100,000+ service requests**.
 | Resilience | Custom circuit breaker + **tenacity** retries | Survive downstream outages gracefully |
 | DevOps | **Docker Compose**, **GitHub Actions**, **GHCR** | One-command local stack, automated test → integration → publish |
 
+![Uploading image.png…]()
+
+
 ---
 
 ## 🧠 How the hard problems are solved
